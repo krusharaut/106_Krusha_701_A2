@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Submission Result</title>
+</head>
+<body>
+    <h2>Submitted Data</h2>
+    <table border="1" cellpadding="10">
+        <tr><td>Username</td><td><%= data.username %></td></tr>
+        <tr><td>Email</td><td><%= data.email %></td></tr>
+        <tr><td>Gender</td><td><%= data.gender %></td></tr>
+        <tr><td>Hobbies</td><td><%= data.hobbies.join(', ') %></td></tr>
+        <tr><td>Profile Picture</td><td><img src="<%= data.profilePicPath %>" width="100"/></td></tr>
+        <tr>
+            <td>Other Pictures</td>
+            <td>
+                <% data.otherPicsPaths.forEach(pic => { %>
+                    <img src="<%= pic %>" width="100"/>
+                <% }) %>
+            </td>
+        </tr>
+    </table>
+
+    <br/>
+    <a href="/download">Download JSON Data</a>
+</body>
+</html>

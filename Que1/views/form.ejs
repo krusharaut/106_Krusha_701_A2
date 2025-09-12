@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Registration</title>
+    <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+    <h2>User Registration</h2>
+
+    <% if (errors.length > 0) { %>
+        <ul style="color:red;">
+            <% errors.forEach(err => { %>
+                <li><%= err.msg %></li>
+            <% }) %>
+        </ul>
+    <% } %>
+
+    <form action="/submit" method="POST" enctype="multipart/form-data">
+        <label>Username: <input type="text" name="username" value="<%= old.username || '' %>"/></label><br/>
+        <label>Password: <input type="password" name="password"/></label><br/>
+        <label>Confirm Password: <input type="password" name="confirmPassword"/></label><br/>
+        <label>Email: <input type="email" name="email" value="<%= old.email || '' %>"/></label><br/>
+
+        <label>Gender:</label>
+        <label><input type="radio" name="gender" value="Male" <%= old.gender === 'Male' ? 'checked' : '' %>/> Male</label>
+        <label><input type="radio" name="gender" value="Female" <%= old.gender === 'Female' ? 'checked' : '' %>/> Female</label><br/>
+
+        <label>Hobbies:</label>
+        <label><input type="checkbox" name="hobbies" value="Reading" <%= (old.hobbies || []).includes('Reading') ? 'checked' : '' %>/> Reading</label>
+        <label><input type="checkbox" name="hobbies" value="Traveling" <%= (old.hobbies || []).includes('Traveling') ? 'checked' : '' %>/> Traveling</label>
+        <label><input type="checkbox" name="hobbies" value="Music" <%= (old.hobbies || []).includes('Music') ? 'checked' : '' %>/> Music</label><br/>
+
+        <label>Upload Profile Picture: <input type="file" name="profilePic" accept="image/*" /></label><br/>
+        <label>Upload Other Pictures: <input type="file" name="otherPics" accept="image/*" multiple /></label><br/>
+
+        <button type="submit">Register</button>
+    </form>
+</body>
+</html>

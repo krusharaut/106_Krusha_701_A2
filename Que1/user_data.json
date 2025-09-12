@@ -1,0 +1,13 @@
+{
+  "username": "Nikita Patel",
+  "email": "nikitapatel04020@gmail.com",
+  "gender": "Female",
+  "hobbies": [
+    "Reading",
+    "Traveling"
+  ],
+  "profilePicPath": "/uploads/profile/1756204073296-Screenshot 2025-08-26 035445.png",
+  "otherPicsPaths": [
+    "/uploads/others/1756204073309-Screenshot 2025-08-18 182136.png"
+  ]
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Random Cat Fact</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #fdf6ec;
+      text-align: center;
+      padding: 50px;
+    }
+    .card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      display: inline-block;
+      max-width: 400px;
+    }
+    h1 { color: #444; }
+    p { font-size: 18px; color: #333; }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      background: #ff9800;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover { background: #e68900; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Cat Fact</h1>
+    <p><%= fact %></p>
+    <form action="/" method="GET">
+      <button type="submit">Get Another Fact</button>
+    </form>
+  </div>
+</body>
+</html>
